@@ -37,7 +37,7 @@ export default function Header() {
         </div>
 
         <div className=" lg:absolute  lg:flex lg:right-10 lg:top-3 text-white ">
-          <Link to={`photos`} scroll>
+          <Link to={`photos`}>
             <p className={style.nav}> Photos</p>
           </Link>
 
