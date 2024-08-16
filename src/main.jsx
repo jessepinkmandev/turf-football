@@ -10,13 +10,14 @@ import SignUp from "./pages/SignUp";
 import SignIn from "./pages/SignIn";
 import { AuthContextProvider } from "./context/AuthContext";
 import ProtectedRoutes from "./components/ProtectedRoutes";
+import ErrorPage from "./error-page";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <AuthContextProvider>
       <BrowserRouter basename={"/turf-football/"}>
         <Routes>
-          <Route path="/" element={<Root />}>
+          <Route errorElement={<ErrorPage />} path="/" element={<Root />}>
             <Route path="signup" element={<SignUp />} />
             <Route path="signin" element={<SignIn />} />
             <Route
