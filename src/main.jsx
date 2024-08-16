@@ -14,7 +14,7 @@ import ProtectedRoutes from "./components/ProtectedRoutes";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <AuthContextProvider>
-      <BrowserRouter>
+      <BrowserRouter basename={"/turf-football/"}>
         <Routes>
           <Route path="/" element={<Root />}>
             <Route path="signup" element={<SignUp />} />
