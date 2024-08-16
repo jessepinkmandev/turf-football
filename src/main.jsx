@@ -14,7 +14,7 @@ import ProtectedRoutes from "./components/ProtectedRoutes";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "",
     index: true,
     element: <Root />,
     errorElement: <ErrorPage />,
