@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-export default function ErrorPage({ error }) {
+export default function ErrorPage() {
   console.log("error");
 
   return (
