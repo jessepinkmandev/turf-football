@@ -15,43 +15,44 @@ import ProtectedRoutes from "./components/ProtectedRoutes";
 const router = createBrowserRouter([
   {
     path: "",
+    index: true,
     element: <Root />,
     errorElement: <ErrorPage />,
-    children: [
-      {
-        path: "/signin",
-        element: <SignIn />,
-      },
-      {
-        path: "/signup",
-        element: <SignUp />,
-      },
+    // children: [
+    //   {
+    //     path: "/signin",
+    //     element: <SignIn />,
+    //   },
+    //   {
+    //     path: "/signup",
+    //     element: <SignUp />,
+    //   },
 
-      {
-        path: "/more",
-        element: (
-          <ProtectedRoutes>
-            <Details />,
-          </ProtectedRoutes>
-        ),
-      },
-      {
-        path: "/photos",
-        element: (
-          <ProtectedRoutes>
-            <Photos />,
-          </ProtectedRoutes>
-        ),
-      },
-      {
-        path: "/contactus",
-        element: (
-          <ProtectedRoutes>
-            <Contact />,
-          </ProtectedRoutes>
-        ),
-      },
-    ],
+    //   {
+    //     path: "/more",
+    //     element: (
+    //       <ProtectedRoutes>
+    //         <Details />,
+    //       </ProtectedRoutes>
+    //     ),
+    //   },
+    //   {
+    //     path: "/photos",
+    //     element: (
+    //       <ProtectedRoutes>
+    //         <Photos />,
+    //       </ProtectedRoutes>
+    //     ),
+    //   },
+    //   {
+    //     path: "/contactus",
+    //     element: (
+    //       <ProtectedRoutes>
+    //         <Contact />,
+    //       </ProtectedRoutes>
+    //     ),
+    //   },
+    // ],
   },
 ]);
 
