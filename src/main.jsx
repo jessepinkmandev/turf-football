@@ -14,8 +14,8 @@ import ErrorPage from "./error-page";
 import { ErrorBoundary } from "react-error-boundary";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <ErrorBoundary FallbackComponent={<ErrorPage />}>
+  <ErrorBoundary fallback={<div>error</div>}>
+    <React.StrictMode>
       <AuthContextProvider>
         <BrowserRouter basename={"/turf-football/"}>
           <Routes>
@@ -50,6 +50,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           </Routes>
         </BrowserRouter>{" "}
       </AuthContextProvider>
-    </ErrorBoundary>
-  </React.StrictMode>
+    </React.StrictMode>
+  </ErrorBoundary>
 );
