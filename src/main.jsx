@@ -20,6 +20,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route errorElement={<ErrorPage />} path="/" element={<Root />}>
             <Route path="signup" element={<SignUp />} />
             <Route path="signin" element={<SignIn />} />
+            <Route path="/*" element={<Root />} />
             <Route
               path="more"
               element={
