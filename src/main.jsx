@@ -10,46 +10,42 @@ import SignUp from "./pages/SignUp";
 import SignIn from "./pages/SignIn";
 import { AuthContextProvider } from "./context/AuthContext";
 import ProtectedRoutes from "./components/ProtectedRoutes";
-import ErrorPage from "./error-page";
-import { ErrorBoundary } from "react-error-boundary";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <ErrorBoundary fallback={<div>error</div>}>
-    <React.StrictMode>
-      <AuthContextProvider>
-        <BrowserRouter basename={"/turf-football/"}>
-          <Routes>
-            <Route path="/" element={<Root />}>
-              <Route path="signup" element={<SignUp />} />
-              <Route path="signin" element={<SignIn />} />
-              <Route
-                path="more"
-                element={
-                  <ProtectedRoutes>
-                    <Details />
-                  </ProtectedRoutes>
-                }
-              />
-              <Route
-                path="photos"
-                element={
-                  <ProtectedRoutes>
-                    <Photos />
-                  </ProtectedRoutes>
-                }
-              />
-              <Route
-                path="contactus"
-                element={
-                  <ProtectedRoutes>
-                    <Contact />
-                  </ProtectedRoutes>
-                }
-              />
-            </Route>
-          </Routes>
-        </BrowserRouter>{" "}
-      </AuthContextProvider>
-    </React.StrictMode>
-  </ErrorBoundary>
+  <React.StrictMode>
+    <AuthContextProvider>
+      <BrowserRouter basename={"/turf-football/"}>
+        <Routes>
+          <Route path="/" element={<Root />}>
+            <Route path="signup" element={<SignUp />} />
+            <Route path="signin" element={<SignIn />} />
+            <Route
+              path="more"
+              element={
+                <ProtectedRoutes>
+                  <Details />
+                </ProtectedRoutes>
+              }
+            />
+            <Route
+              path="photos"
+              element={
+                <ProtectedRoutes>
+                  <Photos />
+                </ProtectedRoutes>
+              }
+            />
+            <Route
+              path="contactus"
+              element={
+                <ProtectedRoutes>
+                  <Contact />
+                </ProtectedRoutes>
+              }
+            />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </AuthContextProvider>
+  </React.StrictMode>
 );
