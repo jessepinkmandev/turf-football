@@ -10,42 +10,45 @@ import SignUp from "./pages/SignUp";
 import SignIn from "./pages/SignIn";
 import { AuthContextProvider } from "./context/AuthContext";
 import ProtectedRoutes from "./components/ProtectedRoutes";
+import { ErrorBoundary } from "react-error-boundary";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <AuthContextProvider>
-      <BrowserRouter basename={"/turf-football/"}>
-        <Routes>
-          <Route path="/" element={<Root />}>
-            <Route path="signup" element={<SignUp />} />
-            <Route path="signin" element={<SignIn />} />
-            <Route
-              path="more"
-              element={
-                <ProtectedRoutes>
-                  <Details />
-                </ProtectedRoutes>
-              }
-            />
-            <Route
-              path="photos"
-              element={
-                <ProtectedRoutes>
-                  <Photos />
-                </ProtectedRoutes>
-              }
-            />
-            <Route
-              path="contactus"
-              element={
-                <ProtectedRoutes>
-                  <Contact />
-                </ProtectedRoutes>
-              }
-            />
-          </Route>
-        </Routes>
-      </BrowserRouter>
-    </AuthContextProvider>
+    <ErrorBoundary fallback={<h1>hello</h1>}>
+      <AuthContextProvider>
+        <BrowserRouter basename={"/turf-football/"}>
+          <Routes>
+            <Route path="/" element={<Root />}>
+              <Route path="signup" element={<SignUp />} />
+              <Route path="signin" element={<SignIn />} />
+              <Route
+                path="more"
+                element={
+                  <ProtectedRoutes>
+                    <Details />
+                  </ProtectedRoutes>
+                }
+              />
+              <Route
+                path="photos"
+                element={
+                  <ProtectedRoutes>
+                    <Photos />
+                  </ProtectedRoutes>
+                }
+              />
+              <Route
+                path="contactus"
+                element={
+                  <ProtectedRoutes>
+                    <Contact />
+                  </ProtectedRoutes>
+                }
+              />
+            </Route>
+          </Routes>
+        </BrowserRouter>
+      </AuthContextProvider>
+    </ErrorBoundary>
   </React.StrictMode>
 );
