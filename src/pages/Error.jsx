@@ -9,7 +9,7 @@ const Error = () => {
       <h1>Oops .... Unfortunately an error has occured</h1>
       <h2>Try checking your internet connection or</h2>
       <h1 className="bg-red-300 w-[40%] m-auto py-2">
-        <a href="/">Try Again</a>
+        <a href="/turf-football">Try Again</a>
       </h1>
     </div>
   );
