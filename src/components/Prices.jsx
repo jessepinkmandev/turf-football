@@ -25,10 +25,10 @@ export default function Prices() {
       </h2>
 
       <form onSubmit={handleSubmit} className=" ">
-        <div className="text-2xl text-red-700 grid grid-rows-2 my-4 gap-4 max-w-[60%] md:max-w-[40%] m-auto">
-          <label>Number of Players:</label>
+        <div className="text-2xl text-red-700 grid grid-rows-2  my-4 gap-4 max-w-[60%] md:max-w-[40%] m-auto">
+          <label>Number of Players :</label>
           <input
-            className=" border-2"
+            className=" border-2 max-w-[60%]"
             type="number"
             name="player"
             placeholder="Number of Players"
@@ -38,9 +38,9 @@ export default function Prices() {
         </div>
 
         <div className="text-2xl text-red-700 grid grid-rows-2 gap-4 max-w-[60%] md:max-w-[40%] m-auto">
-          <label>Hours:</label>
+          <label>Hours :</label>
           <input
-            className=" border-2"
+            className=" border-2 max-w-[60%]"
             type="number"
             name="hours"
             value={hours}

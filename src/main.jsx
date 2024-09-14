@@ -12,6 +12,7 @@ import { AuthContextProvider } from "./context/AuthContext";
 import ProtectedRoutes from "./components/ProtectedRoutes";
 import { ErrorBoundary } from "react-error-boundary";
 import Error from "./pages/Error";
+import RedirectRoutes from "./components/RedirectRoutes";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -19,15 +20,29 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <BrowserRouter basename={"/turf-football/"}>
         <Routes>
           <Route
-            path="/*"
+            path="/"
             element={
               <ErrorBoundary FallbackComponent={Error}>
                 <Root />
               </ErrorBoundary>
             }
           >
-            <Route path="signup" element={<SignUp />} />
-            <Route path="signin" element={<SignIn />} />
+            <Route
+              path="signup"
+              element={
+                <RedirectRoutes>
+                  <SignUp />
+                </RedirectRoutes>
+              }
+            />
+            <Route
+              path="signin"
+              element={
+                <RedirectRoutes>
+                  <SignIn />
+                </RedirectRoutes>
+              }
+            />
             <Route
               path="more"
               element={
@@ -53,6 +68,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
               }
             />
           </Route>
+          <Route path="/*" element={<Error />} />
         </Routes>
       </BrowserRouter>
     </AuthContextProvider>
