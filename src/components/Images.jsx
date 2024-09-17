@@ -33,7 +33,7 @@ function Images() {
           Logout
         </button>
       </div>
-      <div className=" max-w-[60%] m-auto ">
+      <div className=" max-w-[80%] md:max-w-[60%] m-auto ">
         <Carousel useKeyboardArrows={true}>
           {images.map((URL, index) => (
             <div key={Math.random()} className="slide">

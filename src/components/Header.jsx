@@ -1,5 +1,6 @@
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { UserAuth } from "../context/AuthContext";
+import Photos from "../routes/photos";
 
 const style = {
   nav: `m-3 p-1 border-b-2 hover:cursor-pointer`,
@@ -29,11 +30,19 @@ export default function Header() {
     <div>
       <div className="flex-col bg-red-500 text-center p-10   ">
         <div>
-          <Link to={`/`}>
-            <h1 className="lg:absolute lg:left-10 text-4xl top-3 text-white">
-              The Football Turf
-            </h1>
-          </Link>
+          {user ? (
+            <Link to={`/photos`}>
+              <h1 className="lg:absolute lg:left-10 text-4xl top-3 text-white">
+                The Football Turf
+              </h1>
+            </Link>
+          ) : (
+            <Link to={`/`}>
+              <h1 className="lg:absolute lg:left-10 text-4xl top-3 text-white">
+                The Football Turf
+              </h1>
+            </Link>
+          )}
         </div>
 
         <div className=" lg:absolute  lg:flex lg:right-10 lg:top-3 text-white ">
